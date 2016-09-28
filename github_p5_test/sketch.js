@@ -3,5 +3,8 @@ function setup() {
 }
 
 function draw() {
-  background(255,0,0);
+  
+}
+function touchStarted() {
+  background(random(0,255),random(0,255),random(0,255));
 }
