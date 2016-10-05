@@ -1,3 +1,6 @@
+document.ontouchmove = function(event){
+ event.preventDefault();
+}
 function setup() {
   createCanvas(windowWidth,windowHeight);
   rectMode(CENTER);
