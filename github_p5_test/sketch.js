@@ -12,5 +12,6 @@ function draw() {
     fill(random(0,255),random(0,255),random(0,255));
   for(var i=0;i<touches.length;i++){
    rect(touches[i].x, touches[i].y,200,200);
+   line(touches[i].x, touches[i].y);
 }
 }
