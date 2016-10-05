@@ -10,5 +10,5 @@ function touchStarted() {
   textSize(50);
   text(touches[0].x, 50, 50);
   text(touches[0].y, 50, 100);
-  rect(40,40, width/2, height/2);
+  rect(40,40, windowWidth/2, windowHeight/2);
 }
