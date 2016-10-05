@@ -9,7 +9,7 @@ function setup() {
 
 function draw() {
    background(255);
-    fill(255,0,0);
+    noFill();
   for(var i=0;i<touches.length;i++){
    rect(touches[i].x, touches[i].y,200,200);
    if((i+1)<touches.length){
