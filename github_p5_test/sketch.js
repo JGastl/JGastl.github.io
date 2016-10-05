@@ -5,14 +5,9 @@ function setup() {
 }
 
 function draw() {
-  
-}
-function touchStarted() {
-  background(255);
+   background(255);
     fill(random(0,255),random(0,255),random(0,255));
   for(var i=0;i<touches.length;i++){
    rect(touches[i].x, touches[i].y,200,200);
-  }
-
-  
+}
 }
