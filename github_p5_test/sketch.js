@@ -24,12 +24,7 @@ function draw() {
    for(i=0;i<touches.length;i++){
     vertex(touches[i].x,touches[i].y);
     vertex(touches[i+1].x,touches[i+1].y);
-   }
-   if((i+1)<touches.length){
-   vertex(touches[i].x, touches[i].y);
-   } 
-   else{
-    vertex(touches[i+1].x, touches[i+1].y)
+    endShape();
    }
    endShape(CLOSE);
   }
