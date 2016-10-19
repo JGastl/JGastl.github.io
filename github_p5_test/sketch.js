@@ -12,17 +12,19 @@ function draw() {
     noFill(0);
   for(var i=0;i<touches.length;i++){
    rect(touches[i].x, touches[i].y,200,200);
-   if((i+1)<touches.length){
+   /*if((i+1)<touches.length){
    line(touches[i].x, touches[i].y, touches[i+1].x, touches[i+1].y);
    } 
    else{
     line(touches[i].x, touches[i].y, touches[0].x, touches[0].y)
-   }
+   }*/
   }
-    if((i+3)>touches.length){
    fill(255,0,0);
-   } 
-   else{
-    noFill(0);
+   beginShape();
+   for(var i=0;i<touches.length;i++){
+    vertex(touches[i].x,touches[i].y);
+    vertex(touches[i+1].x,touches[i+1].y);
+    vertex(touches[i].x,touches[i].y);
+    endShape(CLOSE);
    }
   }
