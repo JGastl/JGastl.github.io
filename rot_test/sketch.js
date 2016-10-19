@@ -1,6 +1,8 @@
-var bSize=100;
+var bSize;
 function setup() {
-   createCanvas(windowWidth,windowHeight); 
+   createCanvas(windowWidth,windowHeight);
+   ellipseMode(CENTER);
+   bSize=200;
 }
 
 function draw() {
