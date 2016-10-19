@@ -19,4 +19,10 @@ function draw() {
     line(touches[i].x, touches[i].y, touches[0].x, touches[0].y)
    }
   }
-}
+    if((i+3)>touches.length){
+   fill(255,0,0);
+   } 
+   else{
+    noFill(0);
+   }
+  }
