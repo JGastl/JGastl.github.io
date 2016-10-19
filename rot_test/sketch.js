@@ -1,3 +1,4 @@
+var bSize=100;
 function setup() {
    createCanvas(windowWidth,windowHeight); 
 }
@@ -11,5 +12,5 @@ function draw() {
  text("Rz: " + floor(rotationZ), 100, 200);
 }
 function drawBall(){
- ellipse(windowWidth/2,windowHeight/2, 100,100);
+ ellipse(windowWidth/2,windowHeight/2, bSize,bSize);
 }
