@@ -14,6 +14,6 @@ function draw() {
  text("Rz: " + floor(rotationZ), 100, 200);
 }
 function drawBall(){
- fill(random(0,255),random(0,255),random(0,255));
+ fill(100);
  ellipse(windowWidth/2,rotationX+windowHeight/2, bSize,bSize);
 }
