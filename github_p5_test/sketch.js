@@ -21,7 +21,7 @@ function draw() {
   }
    fill(255,0,0);
    beginShape();
-   for(var i=0;i<touches.length;i++){
+   for(i=0;i<touches.length;i++){
     vertex(touches[i].x,touches[i].y);
     vertex(touches[i+1].x,touches[i+1].y);
     vertex(touches[0].x,touches[0].y);
