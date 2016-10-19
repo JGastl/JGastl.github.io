@@ -10,26 +10,26 @@ function setup() {
 function draw() {
    background(255);
     noFill(0);
-    beginShape();
-     fill(255,0,0);
   for(var i=0;i<touches.length;i++){
    rect(touches[i].x, touches[i].y,200,200);
-   vertex(touches[i].x,touches[i].y);
-    vertex(touches[i+1].x,touches[i+1].y);
-  }
-   endShape(CLOSE);
    /*if((i+1)<touches.length){
    line(touches[i].x, touches[i].y, touches[i+1].x, touches[i+1].y);
    } 
    else{
     line(touches[i].x, touches[i].y, touches[0].x, touches[0].y)
    }*/
-  /*}
+  }
    fill(255,0,0);
    beginShape();
    for(i=0;i<touches.length;i++){
     vertex(touches[i].x,touches[i].y);
     vertex(touches[i+1].x,touches[i+1].y);
    }
-   endShape(CLOSE);*/
+   if((i+1)<touches.length){
+   vertex(touches[i].x, touches[i].y);
+   } 
+   else{
+    vertex(touches[i+1].x, touches[i+1].y)
+   }
+   endShape(CLOSE);
   }
