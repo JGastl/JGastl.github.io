@@ -23,6 +23,7 @@ function draw() {
    beginShape();
    for(i=0;i<touches.length;i++){
     vertex(touches[i].x,touches[i].y);
+    vertex(touches[i+1].x,touches[i+1].y);
    }
    endShape(CLOSE);
   }
