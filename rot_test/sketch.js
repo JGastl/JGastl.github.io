@@ -29,7 +29,7 @@ function draw() {
    vitesseX=-vitesseX
    
   }
-    if(posX-bSize/2<0){
+    if(posX-bSize/2<windowWidth-windowWidth){
    vitesseX=vitesseX
   
   }
