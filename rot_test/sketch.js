@@ -29,7 +29,7 @@ function draw() {
    vitesseX=-vitesseX
    
   }
-    if(posX-bSize/2<windowWidth-windowWidth){
+    if(posX-bSize/2<=0){
    vitesseX=vitesseX
   
   }
@@ -41,5 +41,5 @@ function draw() {
 }
 function drawBall(){
  fill(100,255,100);
- ellipse(posX,posY, bSize,bSize);
+ ellipse(posX,posY,bSize,bSize);
 }
