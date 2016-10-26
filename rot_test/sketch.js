@@ -3,7 +3,8 @@ function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
    bSize=200;
-   
+   posX=windowWidth/2;
+   posY=windowHeight/2;
 }
 
 function draw() {
@@ -14,6 +15,7 @@ function draw() {
  text("Ry: " +floor(rotationY), 100, 150);
  text("Rz: " + floor(rotationZ), 100, 200);
  //frict=0.001;
+ 
    accelX=rotationY;//*frict;
    accelY=rotationX;//*frict;
    vitesseX+=accelX;
