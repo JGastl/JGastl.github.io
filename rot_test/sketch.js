@@ -1,11 +1,11 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce;
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
    bSize=100;
    posX=windowWidth/2;
    posY=windowHeight/2;
-   
+   bounce=5
    vitesseX = 0;
    vitesseY = 0;
 }
@@ -27,11 +27,11 @@ function draw() {
   posY+=vitesseY;
   
   if(posX+bSize/2>=windowWidth||posX-bSize/2<=0){
-   vitesseX=-vitesseX
+   vitesseX=-vitesseX-bounce
   }
 
    if(posY+bSize/2>windowHeight||posY-bSize/2<=0){
-   vitesseY=-vitesseY
+   vitesseY=-vitesseY-bounce
   }
 }
 function drawBall(){
