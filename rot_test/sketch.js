@@ -5,6 +5,9 @@ function setup() {
    bSize=200;
    posX=windowWidth/2;
    posY=windowHeight/2;
+   
+   vitesseX = 0;
+   vitesseY = 0;
 }
 
 function draw() {
