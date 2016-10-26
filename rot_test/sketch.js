@@ -1,10 +1,14 @@
-var bSize,vitesseX,vitesseY;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY;
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
    bSize=200;
-   vitesseX=rotationX;
-   vitesseY=rotationY;
+   accelX=rotationX;
+   accelY=rotationY;
+   vitesseX+=accelX;
+   vitesseY+=accelY;
+   posX+=vitesseX;
+   posY+=vitesseY;
 }
 
 function draw() {
@@ -17,5 +21,5 @@ function draw() {
 }
 function drawBall(){
  fill(100);
- ellipse(vitesseX,vitesseY, bSize,bSize);
+ ellipse(posX,posY, bSize,bSize);
 }
