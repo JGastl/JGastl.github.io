@@ -25,8 +25,11 @@ function draw() {
   vitesseY+=accelY;
   posX+=vitesseX;
   posY+=vitesseY;
-  if(posX>windowWidth){
-   posX<windowWidth
+  if(posX+bSize/2>windowWidth){
+   vitesseX=-vitesseX
+  }
+   if(posY+bSize/2>windowHeight){
+   vitesseY=-vitesseY
   }
   
  
