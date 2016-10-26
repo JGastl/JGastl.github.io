@@ -19,7 +19,7 @@ function draw() {
  text("Rz: " + floor(rotationZ), 100, 200);
  
  
-  frict=0.00001;
+  frict=0.01;
   accelX=rotationY*frict;
   accelY=rotationX*frict;
   vitesseX+=accelX;
@@ -28,8 +28,7 @@ function draw() {
   posY+=vitesseY;
   
   
-  text("Vx: " + vitesseX, 100, 300);
- text("Ax: " +accelX, 100, 350);
+ 
 }
 function drawBall(){
  fill(100,255,100);
