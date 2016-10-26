@@ -1,10 +1,11 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict;
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
    bSize=200;
-   accelX=rotationY;
-   accelY=rotationX;
+   frict=0.001;
+   accelX=rotationY*frict;
+   accelY=rotationX*frict;
    vitesseX+=accelX;
    vitesseY+=accelY;
    posX+=vitesseX;
