@@ -25,18 +25,22 @@ function draw() {
   vitesseY+=accelY;
   posX+=vitesseX;
   posY+=vitesseY;
-  if(posX+bSize/2>windowWidth){
+  
+  if(posX+bSize/2>=windowWidth){
    vitesseX=-vitesseX
    
   }
     if(posX-bSize/2<=0){
-   vitesseX=vitesseX
+   vitesseX=-vitesseX
   
   }
    if(posY+bSize/2>windowHeight){
    vitesseY=-vitesseY
   }
+     if(posY-bSize/2<=0){
+   vitesseY=-vitesseY
   
+  }
  
 }
 function drawBall(){
