@@ -19,8 +19,8 @@ function draw() {
  text("Rz: " + floor(rotationZ), 100, 200);
  
   frict=0.001;
-  accelX=rotationY*frict;
-  accelY=rotationX*frict;
+  accelX=floor(rotationY)*frict;
+  accelY=floor(rotationX)*frict;
   vitesseX+=accelX;
   vitesseY+=accelY;
   posX+=vitesseX;
