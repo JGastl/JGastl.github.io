@@ -3,9 +3,9 @@ function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
    bSize=200;
-   frict=0.001;
-   accelX=rotationY*frict;
-   accelY=rotationX*frict;
+   //frict=0.001;
+   accelX=rotationY;//*frict;
+   accelY=rotationX;//*frict;
    vitesseX+=accelX;
    vitesseY+=accelY;
    posX+=vitesseX;
