@@ -40,15 +40,15 @@ function draw() {
   posY+=vitesseY;
   
   if(posX+bSize/2>=windowWidth||posX-bSize/2<=0){
-   vitesseX=-vitesseX*bounce;
+   vitesseX=-vitesseX//*bounce;
   }
 
    if(posY+bSize/2>windowHeight||posY-bSize/2<=0){
-   vitesseY=-vitesseY*bounce;
+   vitesseY=-vitesseY//*bounce;
   }
     if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
-   vitesseX=-vitesseX*bounce;
-   //vitesseY=-vitesseY*bounce;
+   vitesseX=-vitesseX//*bounce;
+   vitesseY=-vitesseY//*bounce;
   }
     if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
      score+=5
