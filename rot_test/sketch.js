@@ -49,7 +49,7 @@ function draw() {
   }
     if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
      col=true
-     if(col===false){
+     if(col===true){
    vitesseX=-vitesseX*bounce;
      }
   }
