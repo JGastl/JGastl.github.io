@@ -8,15 +8,15 @@ function setup() {
    bounce=5
    vitesseX = 0;
    vitesseY = 0;
-   obSize1=random(0,100);
-   obSize2=random(0,100);
-   obSize3=random(0,100);
-   obX1=random(0,windowWidth-obSize1);
-   obX2=random(0,windowWidth-obSize2);
-   obX3=random(0,windowWidth-obSize3);
-   obY1=random(0,windowHeight-obSize1);
-   obY2=random(0,windowHeight-obSize2);
-   obY3=random(0,windowHeight-obSize3);
+   obSize1=random(20,100);
+   obSize2=random(20,100);
+   obSize3=random(20,100);
+   obX1=random(0,windowWidth);
+   obX2=random(0,windowWidth);
+   obX3=random(0,windowWidth);
+   obY1=random(0,windowHeight);
+   obY2=random(0,windowHeight);
+   obY3=random(0,windowHeight);
 }
 
 function draw() {
