@@ -56,13 +56,13 @@ function draw() {
     else if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
      col=true
      if(col===true){
-      score+5;
+      score+=5;
      }
     }
    else if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
     col=true
    if(col===true){
-    score-5;
+    score-=5;
    }
    }
    else{
