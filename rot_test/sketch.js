@@ -53,11 +53,17 @@ function draw() {
     if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
      col=1;
   }
+  else if(col==1){
+   score+=5
+  }
     else{
      col=0
     }
    if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
    col=1;
+  }
+  else if(col==1){
+   score-=5
   }
   else{
    col=0
