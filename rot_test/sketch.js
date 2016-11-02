@@ -29,7 +29,7 @@ function draw() {
  text("Rx: " + floor(rotationX), 100, 100);
  text("Ry: " +floor(rotationY), 100, 150);
  text("Rz: " + floor(rotationZ), 100, 200);
- text(socre, windowWidth/2,100);
+ text(""+socre, windowWidth/2,100);
  
   frict=0.001;
   accelX=floor(rotationY)*frict;
