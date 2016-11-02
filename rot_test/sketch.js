@@ -11,12 +11,12 @@ function setup() {
    obSize1=random(50,100);
    obSize2=random(50,100);
    obSize3=random(50,100);
-   obX1=random(0,windowWidth);
-   obX2=random(0,windowWidth);
-   obX3=random(0,windowWidth);
-   obY1=random(0,windowHeight);
-   obY2=random(0,windowHeight);
-   obY3=random(0,windowHeight);
+   obX1=random(10,windowWidth);
+   obX2=random(10,windowWidth);
+   obX3=random(10,windowWidth);
+   obY1=random(10,windowHeight);
+   obY2=random(10,windowHeight);
+   obY3=random(10,windowHeight);
 }
 
 function draw() {
