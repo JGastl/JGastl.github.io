@@ -6,7 +6,7 @@ function setup() {
    score=0;
    posX=windowWidth/2;
    posY=windowHeight/2;
-   bounce=0.5
+   bounce=0.05;
    vitesseX = 0;
    vitesseY = 0;
    obSize1=random(50,100);
@@ -48,6 +48,7 @@ function draw() {
   }
     if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
    vitesseX=-vitesseX*bounce;
+   vitesseY=-vitesseY*bounce;
   }
     if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
      score+=5
