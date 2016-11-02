@@ -50,12 +50,7 @@ function draw() {
    vitesseX=-vitesseX//*bounce;
    //vitesseY=-vitesseY*bounce;
   }
-    if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
-     score+=5
-  }
-    if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
-   score-=5
-  }
+ 
 }
 function drawBall(){
  fill(0,255,200);
@@ -69,4 +64,10 @@ function obs(){
  ellipse(obX2,obY2,obSize2,obSize2);
  fill(255,0,0);
  ellipse(obX3,obY3,obSize3,obSize3);
+     if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
+     score+=5
+  }
+    if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
+   score-=5
+  }
 }
