@@ -57,7 +57,7 @@ function draw() {
   }
 }
 function drawBall(){
- fill(0,255,255);
+ fill(100,205,255);
  ellipse(posX,posY,bSize,bSize);
 }
 
