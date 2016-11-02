@@ -1,8 +1,9 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce, obX1, obY1, obX2, obY2, obX3, obY3, obSize1, obSize2, obSize3;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce, obX1, obY1, obX2, obY2, obX3, obY3, obSize1, obSize2, obSize3,score;
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
    bSize=100;
+   score=0;
    posX=windowWidth/2;
    posY=windowHeight/2;
    bounce=5
@@ -23,10 +24,12 @@ function draw() {
  background(255);
  obs();
  drawBall();
+ fill(0);
  textSize(40);
  text("Rx: " + floor(rotationX), 100, 100);
  text("Ry: " +floor(rotationY), 100, 150);
  text("Rz: " + floor(rotationZ), 100, 200);
+ text(socre, windowWidth/2,100);
  
   frict=0.001;
   accelX=floor(rotationY)*frict;
@@ -42,6 +45,15 @@ function draw() {
 
    if(posY+bSize/2>windowHeight||posY-bSize/2<=0){
    vitesseY=-vitesseY
+  }
+    if(posX+bSize/2<=obX1+obSize1/2){
+   vitesseX=-vitesseX
+  }
+    if(posX+bSize/2<=obX2+obSize2/2){
+     score+=5
+  }
+    if(posX+bSize/2<=obX3+obSize3/2){
+   score-=5
   }
 }
 function drawBall(){
