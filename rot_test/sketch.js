@@ -4,7 +4,7 @@ function setup() {
    ellipseMode(CENTER);
    bSize=100;
    score=0;
-   col=0;
+   col=false;
    posX=windowWidth/2;
    posY=windowHeight/2;
    bounce=0.8;
@@ -48,26 +48,23 @@ function draw() {
    vitesseY=-vitesseY*bounce;
   }
     if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
+     if(col===false){
    vitesseX=-vitesseX*bounce;
+     }
   }
-    if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
-     col=1;
-  }
-  else if(col==1){
-   score+=5
-  }
-    else{
-     col=0
+    else if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
+     if(col===true){
+      score+=5;
+     }
     }
-   if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
-   col=1;
-  }
-  else if(col==1){
-   score-=5
-  }
-  else{
-   col=0
-  }
+   else if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
+   if(col===true){
+    score-=5;
+   }
+   }
+   else{
+    col=false;
+   }
 }
 function drawBall(){
  fill(0,255,200);
