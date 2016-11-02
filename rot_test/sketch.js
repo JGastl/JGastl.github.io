@@ -46,13 +46,13 @@ function draw() {
    if(posY+bSize/2>windowHeight||posY-bSize/2<=0){
    vitesseY=-vitesseY
   }
-    if(posX+bSize/2<=obX1+obSize1/2){
+    if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
    vitesseX=-vitesseX
   }
-    if(posX+bSize/2<=obX2+obSize2/2){
+    if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
      score+=5
   }
-    if(posX+bSize/2<=obX3+obSize3/2){
+    if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
    score-=5
   }
 }
