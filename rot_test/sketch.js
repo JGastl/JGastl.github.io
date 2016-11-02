@@ -1,4 +1,4 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce, obX1, obY1, obX2, obY2, obX3, obY3, obSize;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce, obX1, obY1, obX2, obY2, obX3, obY3, obSize1, obSize2, obSize3;
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
@@ -8,7 +8,9 @@ function setup() {
    bounce=5
    vitesseX = 0;
    vitesseY = 0;
-   obSize=random(0,150);
+   obSize1=random(0,100);
+   obSize2=random(0,100);
+   obSize3=random(0,100);
    obX1=random(0,windowWidth);
    obX2=random(0,windowWidth);
    obX3=random(0,windowWidth);
@@ -49,9 +51,9 @@ function drawBall(){
 
 function obs(){
  fill(0,0,255);
- ellipse(obX1,obY1,obSize,obSize);
+ ellipse(obX1,obY1,obSize1,obSize1);
  fill(0,255,0);
- ellipse(obX2,obY2,obSize,obSize);
+ ellipse(obX2,obY2,obSize2,obSize2);
  fill(255,0,0);
- ellipse(obX3,obY3,obSize,obSize);
+ ellipse(obX3,obY3,obSize3,obSize3);
 }
