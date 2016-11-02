@@ -31,7 +31,7 @@ function draw() {
  text("Rz: " + floor(rotationZ), 100, 200);
  text("score:"+score, windowWidth/2,100);
  
-  frict=0.001;
+  frict=0.01;
   accelX=floor(rotationY)*frict;
   accelY=floor(rotationX)*frict;
   vitesseX+=accelX;
@@ -58,7 +58,7 @@ function draw() {
   }
 }
 function drawBall(){
- fill(255,255,0);
+ fill(0,255,200);
  ellipse(posX,posY,bSize,bSize);
 }
 
