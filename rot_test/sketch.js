@@ -6,7 +6,7 @@ function setup() {
    score=0;
    posX=windowWidth/2;
    posY=windowHeight/2;
-   bounce=0.05;
+   bounce=0.8;
    vitesseX = 0;
    vitesseY = 0;
    obSize1=random(50,100);
@@ -58,7 +58,7 @@ function draw() {
   }
 }
 function drawBall(){
- fill(200,255,0);
+ fill(255,255,0);
  ellipse(posX,posY,bSize,bSize);
 }
 
