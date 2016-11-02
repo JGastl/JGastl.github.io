@@ -51,10 +51,10 @@ function draw() {
    //vitesseY=-vitesseY*bounce;
   }
     if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
-     score=score+5;
+     score+5;
   }
     if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
-   score=score-5;
+   score-5;
   }
 }
 function drawBall(){
