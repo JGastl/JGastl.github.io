@@ -48,20 +48,17 @@ function draw() {
    vitesseY=-vitesseY*bounce;
   }
     if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
-     col=true
-     if(col===true){
    vitesseX=-vitesseX*bounce;
      }
-  }
     else if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
-     col=true
-     if(col===true){
+     if(col===false){
+      col=true
       score+=5;
      }
     }
    else if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
+   if(col===false){
     col=true
-   if(col===true){
     score-=5;
    }
    }
