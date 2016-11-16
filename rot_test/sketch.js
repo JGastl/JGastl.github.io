@@ -1,4 +1,4 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce,score,col,obstacles=[];
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce,score,col,obstacles=[],i;
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
@@ -21,7 +21,7 @@ function draw() {
  fill(0);
  textSize(40);
  text("score:"+score, windowWidth/2,100);
- for(var i=0;i<3; i==){
+ for(i=0;i<3; i==){
    obsacles[i]=new Obs("malus");
    obsacles[i]=new Obs("bonus");
    obsacles[i]=new Obs("obs");
