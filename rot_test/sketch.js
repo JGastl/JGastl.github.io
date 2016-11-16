@@ -85,6 +85,6 @@ function Obs(obstacle){
  
 this.drawObs=function(){
  fill(this.colour)
- ellipse(this.x,this.y,this,size,this,size);
+ ellipse(this.x,this.y,this.size,this.size);
 }
 }
