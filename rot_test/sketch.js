@@ -1,7 +1,10 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce, obX1, obY1, obX2, obY2, obX3, obY3, obSize1, obSize2, obSize3,score,col;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce,score,col,obstacles=[];
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
+   obsacles[i]=new Obs("malus");
+   obsacles[i]=new Obs("bonus");
+   obsacles[i]=new Obs("obs");
    bSize=100;
    score=0;
    col=false;
@@ -10,28 +13,19 @@ function setup() {
    bounce=0.8;
    vitesseX = 0;
    vitesseY = 0;
-   obSize1=random(50,100);
-   obSize2=random(50,100);
-   obSize3=random(50,100);
-   obX1=random(10,windowWidth);
-   obX2=random(10,windowWidth);
-   obX3=random(10,windowWidth);
-   obY1=random(10,windowHeight);
-   obY2=random(10,windowHeight);
-   obY3=random(10,windowHeight);
 }
 
 function draw() {
  background(255);
- obs();
  drawBall();
  fill(0);
  textSize(40);
- text("Rx: " + floor(rotationX), 100, 100);
- text("Ry: " +floor(rotationY), 100, 150);
- text("Rz: " + floor(rotationZ), 100, 200);
  text("score:"+score, windowWidth/2,100);
- 
+ for(var i=0;i<3; i==){
+   obsacles[i]=new Obs("malus");
+   obsacles[i]=new Obs("bonus");
+   obsacles[i]=new Obs("obs");
+ }
   frict=0.01;
   accelX=floor(rotationY)*frict;
   accelY=floor(rotationX)*frict;
@@ -42,21 +36,24 @@ function draw() {
   
   if(posX+bSize/2>=windowWidth||posX-bSize/2<=0){
    vitesseX=-vitesseX *bounce;
+   posX=windowWidth-bSize/2;
+   posX=bSize/2;
   }
 
-   if(posY+bSize/2>windowHeight||posY-bSize/2<=0){
+   if(posY+bSize/2>=windowHeight||posY-bSize/2<=0){
    vitesseY=-vitesseY*bounce;
   }
-    if(dist(posX,posY,obX1,obY1)<=bSize/2+obSize1/2){
+  for(var i=0;i<3; i==){
+    if(dist(posX,posY,i.x,i.y)<=bSize/2+i.size/2){
    vitesseX=-vitesseX*bounce;
      }
-    else if(dist(posX,posY,obX2,obY2)<=bSize/2+obSize2/2){
+    else if(dist(posX,posY,i.x,i.y)<=bSize/2+i.size/2){
      if(col===false){
       col=true
       score+=5;
      }
     }
-   else if(dist(posX,posY,obX3,obY3)<=bSize/2+obSize3/2){
+   else if(dist(posX,posY,i.x,i.y)<=bSize/2+i.size/2){
    if(col===false){
     col=true
     score-=5;
@@ -66,16 +63,21 @@ function draw() {
     col=false;
    }
 }
+}
 function drawBall(){
  fill(0,255,200);
  ellipse(posX,posY,bSize,bSize);
 }
 
-function obs(){
- fill(0,0,255);
- ellipse(obX1,obY1,obSize1,obSize1);
- fill(0,255,0);
- ellipse(obX2,obY2,obSize2,obSize2);
- fill(255,0,0);
- ellipse(obX3,obY3,obSize3,obSize3);
+function Obs(obstacle){
+ this.type=obstacle;
+ this.x=random(10,windowWidth);
+ this.y=random(10,windowHeight);
+ this.size=random(30,60);
+ this.colour=color(random(0,255),random(0,255),random(0,255));
+ 
+this.display=function(){
+ fill(this.colour)
+ ellipse(this.x,this,y,this,size,this,size);
+}
 }
