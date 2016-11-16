@@ -1,10 +1,12 @@
-var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce,score,col,obstacles=[],i;
+var bSize,vitesseX,vitesseY,accelX,accelY,posX,posY,angX,angY,frict,bounce,score,col,obstacles=[];
 function setup() {
    createCanvas(windowWidth,windowHeight);
    ellipseMode(CENTER);
-   obsacles[i]=new Obs("malus");
-   obsacles[i]=new Obs("bonus");
-   obsacles[i]=new Obs("obs");
+    for(var i=0;i<3; i++){
+   obstacles[0]=new Obs("malus");
+   obstacles[1]=new Obs("bonus");
+   obstacles[2]=new Obs("obs");
+ }
    bSize=100;
    score=0;
    col=false;
@@ -21,10 +23,8 @@ function draw() {
  fill(0);
  textSize(40);
  text("score:"+score, windowWidth/2,100);
- for(i=0;i<3; i==){
-   obsacles[i]=new Obs("malus");
-   obsacles[i]=new Obs("bonus");
-   obsacles[i]=new Obs("obs");
+for (var i=0; i <3; i++) {
+  obstacles[i].drawObs();
  }
   frict=0.01;
   accelX=floor(rotationY)*frict;
@@ -43,7 +43,7 @@ function draw() {
    if(posY+bSize/2>=windowHeight||posY-bSize/2<=0){
    vitesseY=-vitesseY*bounce;
   }
-  for(var i=0;i<3; i==){
+  for(var i=0;i<3; i++){
     if(dist(posX,posY,i.x,i.y)<=bSize/2+i.size/2){
    vitesseX=-vitesseX*bounce;
      }
@@ -76,8 +76,8 @@ function Obs(obstacle){
  this.size=random(30,60);
  this.colour=color(random(0,255),random(0,255),random(0,255));
  
-this.display=function(){
+this.drawObs=function(){
  fill(this.colour)
- ellipse(this.x,this,y,this,size,this,size);
+ ellipse(this.x,this.y,this,size,this,size);
 }
 }
