@@ -34,14 +34,21 @@ for (var i=0; i <3; i++) {
   posX+=vitesseX;
   posY+=vitesseY;
   
-  if(posX+bSize/2>=windowWidth||posX-bSize/2<=0){
+  if(posX+bSize/2>=windowWidth){
    vitesseX=-vitesseX *bounce;
    posX=windowWidth-bSize/2;
+  }
+  if(posX-bSize/2<=0){
+   vitesseX=-vitesseX *bounce;
    posX=bSize/2;
   }
-
-   if(posY+bSize/2>=windowHeight||posY-bSize/2<=0){
+   if(posY+bSize/2>=windowHeight ){
    vitesseY=-vitesseY*bounce;
+   posY=windowHeight-bSize/2;
+  }
+    if(posY-bSize/2<=0){
+   vitesseY=-vitesseY*bounce;
+   posY=bSize/2;
   }
   for(var i=0;i<3; i++){
     if(dist(posX,posY,i.x,i.y)<=bSize/2+i.size/2){
