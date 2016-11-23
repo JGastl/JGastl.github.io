@@ -8,7 +8,7 @@ function setup() {
   obstacles[1] = new Obs("bonus");
   obstacles[2] = new Obs("malus");
  }
- bSize = 75;
+ bSize = 50;
  score = 0;
  col = false;
  posX = windowWidth / 2;
@@ -52,24 +52,27 @@ function draw() {
   posY = bSize / 2;
  }
  for (i = 0; i < 3; i++) {
-  if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2) {
-   if(obstacles[i].type==="obs"){
+   if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
+    if(obstacles[i].type==="obs"){
     vitesseX = -vitesseX * bounce;
-  } else if (obstacles[i].type==="bonus") {
-   if (col === false) {
-    col = true
-    score += 5;
-   }
-  } else if (obstacles[i].type==="malus") {
-   if (col === false) {
-    col = true
-    score -= 5;
-   }
-  } else {
+    } 
+     else if (obstacles[i].type==="bonus") {
+      if (col === false) {
+       col = true
+       score += 5;
+      }
+     } 
+    else if (obstacles[i].type==="malus") {
+      if (col === false) {
+       col = true
+       score -= 5;
+      }
+     }
+    else {
    col = false;
+    }
   }
  }
-}
 }
 function drawBall() {
  fill(0, 255, 255);
