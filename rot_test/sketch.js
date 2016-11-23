@@ -24,7 +24,7 @@ function setup() {
 function draw() {
  background(img,100);
  drawBall();
- fill(0);
+ fill(255);
  textSize(40);
  text("score:" + score, windowWidth/2, windowHeight/2);
  for (i = 0; i < 3; i++) {
