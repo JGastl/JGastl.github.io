@@ -54,6 +54,7 @@ function draw() {
     if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
     if(obstacles[i].type==="obs"){
     vitesseX = -vitesseX * bounce;
+     vitesseY = -vitesseY * bounce;
     }else if (obstacles[i].type==="bonus") {
       if (obstacles[i].col === false) {
        obstacles[i].col = true
