@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
- background(255);
+ background(random(0,255),random(0,255),random(0,255));
  drawBall();
  fill(0);
  textSize(40);
