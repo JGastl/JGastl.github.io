@@ -22,7 +22,7 @@ function draw() {
  drawBall();
  fill(0);
  textSize(40);
- text("score:" + score, windowWidth / 2, 100);
+ text("score:" + score, windowWidth/2, windowHeight/2);
  for (i = 0; i < 3; i++) {
   obstacles[i].drawObs();
  }
