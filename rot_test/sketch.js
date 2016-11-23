@@ -55,23 +55,21 @@ function draw() {
    if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
     if(obstacles[i].type==="obs"){
     vitesseX = -vitesseX * bounce;
-    } 
-     else if (obstacles[i].type==="bonus") {
+    }else if (obstacles[i].type==="bonus") {
       if (col === false) {
        col = true
        score += 5;
       }
-     } 
-    else if (obstacles[i].type==="malus") {
+     }else if (obstacles[i].type==="malus") {
       if (col === false) {
        col = true
        score -= 5;
       }
      }
+   }
     else {
    col = false;
     }
-  }
  }
 }
 function drawBall() {
