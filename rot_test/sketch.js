@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
- background(back.jpeg,100);
+ background(image(back.jpeg),100);
  drawBall();
  fill(0);
  textSize(40);
