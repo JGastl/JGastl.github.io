@@ -53,13 +53,15 @@ function draw() {
  }
  for (i = 0; i < 3; i++) {
   if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2) {
-   vitesseX = -vitesseX * bounce;
-  } else if (dist(posX, posY, obstacles[i].x, obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2) {
+   if(obstacles[i].type===obs){
+    vitesseX = -vitesseX * bounce;
+   }
+  } else if (obstacles[i].type===bonus) {
    if (col === false) {
     col = true
     score += 5;
    }
-  } else if (dist(posX, posY, obstacles[i].x, obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2) {
+  } else if (obstacles[i].type===malus) {
    if (col === false) {
     col = true
     score -= 5;
@@ -75,8 +77,8 @@ function drawBall() {
  ellipse(posX, posY, bSize, bSize);
 }
 
-function Obs(obs) {
- this.type = obs;
+function Obs(obstacle) {
+ this.type = obstacle;
  this.x = random(10, windowWidth);
  this.y = random(10, windowHeight);
  this.size = random(30, 60);
