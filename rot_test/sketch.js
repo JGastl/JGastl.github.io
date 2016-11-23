@@ -1,4 +1,4 @@
-var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score, col, obstacles = [];
+var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [];
 
 function setup() {
  createCanvas(windowWidth, windowHeight);
@@ -10,7 +10,6 @@ function setup() {
  }
  bSize = 50;
  score = 0;
- col = false;
  posX = windowWidth / 2;
  posY = windowHeight / 2;
  bounce = 0.8;
@@ -52,23 +51,23 @@ function draw() {
   posY = bSize / 2;
  }
  for (i = 0; i < 3; i++) {
-   if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
+    if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
     if(obstacles[i].type==="obs"){
     vitesseX = -vitesseX * bounce;
     }else if (obstacles[i].type==="bonus") {
-      if (col === false) {
-       col = true
+      if (obstacles[i].col === false) {
+       obstacles[i].col = true
        score += 5;
       }
      }else if (obstacles[i].type==="malus") {
-      if (col === false) {
-       col = true
+      if (obstacles[i].col === false) {
+       obstacles[i].col = true
        score -= 5;
       }
      }
    }
     else {
-   col = false;
+   obstacles[i].col = false;
     }
  }
 }
@@ -83,7 +82,7 @@ function Obs(obstacle) {
  this.y = random(10, windowHeight);
  this.size = random(30, 60);
  this.colour = color(random(0, 255), random(0, 255), random(0, 255));
- this.ball = random(0, 2);
+ this.col=false
 
  this.drawObs = function() {
   fill(this.colour)
