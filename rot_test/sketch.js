@@ -50,7 +50,7 @@ for (var i=0; i <3; i++) {
    vitesseY=-vitesseY*bounce;
    posY=bSize/2;
   }
-  for(var i=0;i<3; i++){
+  for(i=0;i<3; i++){
     if(dist(posX,posY,obs.x,obs.y)<=bSize/2+i.size/2){
    vitesseX=-vitesseX*bounce;
      }
@@ -76,12 +76,25 @@ function drawBall(){
  ellipse(posX,posY,bSize,bSize);
 }
 
-function Obs(obstacle){
- this.type=obstacle;
+function Obs(obs){
+ this.type=obs;
  this.x=random(10,windowWidth);
  this.y=random(10,windowHeight);
  this.size=random(30,60);
  this.colour=color(random(0,255),random(0,255),random(0,255));
+ this.ball=random(0,2);
+ if(this.ball===0){
+  this.type=obs;
+ } 
+ else if (this.ball===1){
+  this.type=malus;
+ }
+ else if (this.ball===2){
+  this.type=bonus;
+ }
+ 
+ 
+ 
  
 this.drawObs=function(){
  fill(this.colour)
