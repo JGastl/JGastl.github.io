@@ -1,4 +1,8 @@
-var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [];
+var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img;
+
+function preload(){
+ img=loadImage("back.jpg");
+}
 
 function setup() {
  createCanvas(windowWidth, windowHeight);
@@ -18,7 +22,7 @@ function setup() {
 }
 
 function draw() {
- background(image(back.jpeg),100);
+ background(img,100);
  drawBall();
  fill(0);
  textSize(40);
