@@ -55,8 +55,8 @@ function draw() {
   if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2) {
    if(obstacles[i].type===obs){
     vitesseX = -vitesseX * bounce;
-   }
-  } else if (obstacles[i].type===bonus) {
+  } 
+  else if (obstacles[i].type===bonus) {
    if (col === false) {
     col = true
     score += 5;
@@ -71,7 +71,7 @@ function draw() {
   }
  }
 }
-
+}
 function drawBall() {
  fill(0, 255, 255);
  ellipse(posX, posY, bSize, bSize);
