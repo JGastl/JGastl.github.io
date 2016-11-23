@@ -51,7 +51,7 @@ for (i=0; i <3; i++) {
    posY=bSize/2;
   }
   for(i=0;i<3; i++){
-    if(dist(posX,posY,obs.x,obs.y)<=bSize/2+i.size/2){
+    if(dist(posX,posY,Obs.x,Obs.y)<=bSize/2+i.size/2){
    vitesseX=-vitesseX*bounce;
      }
     else if(dist(posX,posY,bonus.x,bonus.y)<=bSize/2+i.size/2){
