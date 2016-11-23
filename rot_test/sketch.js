@@ -23,7 +23,7 @@ function draw() {
  fill(0);
  textSize(40);
  text("score:"+score, windowWidth/2,100);
-for (var i=0; i <3; i++) {
+for (i=0; i <3; i++) {
   obstacles[i].drawObs();
  }
   frict=0.01;
@@ -50,7 +50,7 @@ for (var i=0; i <3; i++) {
    vitesseY=-vitesseY*bounce;
    posY=bSize/2;
   }
-  for(i=0;i<3; i++){
+  /*for(i=0;i<3; i++){
     if(dist(posX,posY,obs.x,obs.y)<=bSize/2+i.size/2){
    vitesseX=-vitesseX*bounce;
      }
@@ -69,7 +69,7 @@ for (var i=0; i <3; i++) {
    else{
     col=false;
    }
-}
+}*/
 }
 function drawBall(){
  fill(0,255,200);
