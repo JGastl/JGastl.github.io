@@ -8,7 +8,7 @@ function setup() {
   obstacles[1] = new Obs("bonus");
   obstacles[2] = new Obs("malus");
  }
- bSize = 100;
+ bSize = 75;
  score = 0;
  col = false;
  posX = windowWidth / 2;
@@ -71,7 +71,7 @@ function draw() {
 }
 
 function drawBall() {
- fill(0, 255, 200);
+ fill(0, 255, 255);
  ellipse(posX, posY, bSize, bSize);
 }
 
