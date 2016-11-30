@@ -1,4 +1,4 @@
-var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, size,obsX,obsY;
+var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, obsSize,obsX,obsY;
 
 function preload(){
  img=loadImage("back.jpg");
@@ -20,20 +20,20 @@ function setup() {
    typeobs="malus";
    type=0;
   }
-  size=random(30,60);
-  var LOOP=true;
-  while(loop){
+  obsSize=random(30,60);
+  var cycle=true;
+  while(cycle){
   obsX=random(10,windowWidth);
   obsY=random(10, windowHeight);
-  loop=false
+  cycle=false
   for(var j=0;j<i;j++){
-   if(dist(obsX,obsY,obstacles[j].obsX,obstacles[j].obsY<=size/2+obstacles[j].size/2)){
-    loop=true;
+   if(dist(obsX,obsY,obstacles[j].obsX,obstacles[j].obsY<=obsSize/2+obstacles[j].size/2)){
+    cycle=true;
     break;
    }
   }
   }
-  obstacles[i] = new Obs(typeobs,size,obsX,obsY);
+  obstacles[i] = new Obs(typeobs,obsSize,obsX,obsY);
  }
  bSize = 50;
  score = 0;
