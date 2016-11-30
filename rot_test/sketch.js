@@ -1,4 +1,4 @@
-var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img;
+var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, size,obsX,obsY;
 
 function preload(){
  img=loadImage("back.jpg");
@@ -8,9 +8,32 @@ function setup() {
  createCanvas(windowWidth, windowHeight);
  ellipseMode(CENTER);
  for (var i = 0; i < 3; i++) {
-  obstacles[0] = new Obs("obs");
-  obstacles[1] = new Obs("bonus");
-  obstacles[2] = new Obs("malus");
+  if(type===0){
+   typeobs="obs";
+   type++;
+  }
+  else if(type===1){
+   typeobs="bonus";
+   type++;
+  }
+  else{
+   typeobs="malus";
+   type=0;
+  }
+  size=random(30,60);
+  var LOOP=true;
+  while(loop){
+  obsX=random(10,windowWidth);
+  obsY=random(10, windowHeight);
+  loop=false
+  for(var j=0;j<i;j++){
+   if(dist(obsX,obsY,obstacles[j].obsX,obstacles[j].obsY<=size/2+obstacles[j].size/2)){
+    loop=true;
+    break;
+   }
+  }
+  }
+  obstacles[i] = new Obs(typeobs,size,obsX,obsY);
  }
  bSize = 50;
  score = 0;
@@ -86,9 +109,14 @@ function Obs(obstacle) {
  this.x = random(10, windowWidth);
  this.y = random(10, windowHeight);
  this.size = random(30, 60);
- this.colour = color(random(0, 255), random(0, 255), random(0, 255));
  this.col=false
-
+if(this.type==="obs"){
+   this.colour=color(0,0,255);
+    }else if (this.type==="bonus") {
+      this.colour=color(0,255,0);
+     }else{
+      this.colour=color(255,0,0);
+      }
  this.drawObs = function() {
   fill(this.colour)
   ellipse(this.x, this.y, this.size, this.size);
