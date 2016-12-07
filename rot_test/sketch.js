@@ -48,8 +48,8 @@ function draw() {
  background(img,100);
  drawBall();
  fill(255);
- textSize(40);
- text("score:" + score, windowWidth/2, windowHeight/2);
+ textSize(25);
+ text("score:" + score, 20, 30);
  for (i = 0; i < 3; i++) {
   obstacles[i].drawObs();
  }
