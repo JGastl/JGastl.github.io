@@ -1,9 +1,9 @@
-var newGame,bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, obsSize,obsX,obsY, timer,level,iMax;
-
+var i, newGame,bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, obsSize,obsX,obsY, timer,level,iMax;
+//////////////////////////////////////////////
 function preload(){
  img=loadImage("back.jpg");
 }
-
+////////////////////////////////////////////////////////////////
 function setup() {
  createCanvas(windowWidth, windowHeight);
  ellipseMode(CENTER);
@@ -17,11 +17,23 @@ function setup() {
  vitesseX = 0;
  vitesseY = 0;
 }
+//////////////////////////////////////////
 function draw() {
+   if(level===0){
+   level=1;
+   newGame=true;
+ }
+if(newGame===true){
+  obstac();
+  newGame=false;
+}
  background(img,100);
  newGame=false;
  timer-=1;
  drawBall();
+ for(i = 0; i < iMax; i++){
+ obstacles[i].drawObs();
+ }
  fill(255);
  textSize(25);
  text("score:" + score, 20, 30);
@@ -33,14 +45,7 @@ function draw() {
  vitesseY += accelY;
  posX += vitesseX;
  posY += vitesseY;
- if(level===0){
-   level=1;
-   newGame=true;
- }
-if(newGame===true){
-  obstac();
-  newGame=false;
-}
+
  if (posX + bSize / 2 >= windowWidth) {
   vitesseX = -vitesseX * bounce;
   posX = windowWidth - bSize / 2;
@@ -58,10 +63,12 @@ if(newGame===true){
   posY = bSize / 2;
  }
 }
+//////////////////////////////////////////////////////////
 function drawBall() {
  fill(0, 255, 255);
  ellipse(posX, posY, bSize, bSize);
 }
+////////////////////////////////////////////////////////
 function obstac(){
   obsSize=random(30,60);
   var cycle=true;
@@ -74,22 +81,23 @@ else if(level==2){
 else if(level==3){
   iMax=5
 }
-for (var i = 0; i < iMax; i++) {
+for (i = 0;i<iMax; i++) {
   if(type===0){
-   typeobs="obs";
+   typeobs="malus";
    type++;
   }
   else if(type===1){
-   typeobs="bonus";
+   typeobs="obs";
    type++;
   }
   else{
-   typeobs="malus";
+   typeobs="bonus";
    type=0;
   }
-}
+}  
+
  for (i = 0; i < iMax; i++) {
-  obstacles[i].drawObs();
+  obstacles[i] = new Obs(typeobs,obsSize,obsX,obsY);
  }
     while(cycle){
   obsX=random(10,windowWidth);
@@ -101,7 +109,6 @@ for (var i = 0; i < iMax; i++) {
     break;
    }
   }
-  obstacles[i] = new Obs(typeobs,obsSize,obsX,obsY);
  }
  for (i = 0; i < iMax; i++) {
     if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
@@ -125,6 +132,7 @@ for (var i = 0; i < iMax; i++) {
     }
  }
 }
+/////////////////////////////////////////////////
 function Obs(obstacle) {
  this.type = obstacle;
  this.x = random(10, windowWidth);
