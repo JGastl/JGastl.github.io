@@ -1,4 +1,4 @@
-var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, obsSize,obsX,obsY;
+var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, obsSize,obsX,obsY, timer;
 
 function preload(){
  img=loadImage("back.jpg");
@@ -7,6 +7,7 @@ function preload(){
 function setup() {
  createCanvas(windowWidth, windowHeight);
  ellipseMode(CENTER);
+ timer=16*60;
  for (var i = 0; i < 3; i++) {
   if(type===0){
    typeobs="obs";
@@ -46,10 +47,13 @@ function setup() {
 
 function draw() {
  background(img,100);
+ timer-=1;
  drawBall();
  fill(255);
  textSize(25);
  text("score:" + score, 20, 30);
+ text("Time:" + floor(timer/60), windowWidth/2, 30);
+ 
  for (i = 0; i < 3; i++) {
   obstacles[i].drawObs();
  }
