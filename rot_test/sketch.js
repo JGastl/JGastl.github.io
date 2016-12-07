@@ -81,8 +81,8 @@ else if(level==2){
 else if(level==3){
   iMax=5
 }
-for (i = 0;i<iMax; i++) {
-  if(type===0){
+ for (i = 0; i < iMax; i++) {  
+   if(type===0){
    typeobs="malus";
    type++;
   }
@@ -94,9 +94,6 @@ for (i = 0;i<iMax; i++) {
    typeobs="bonus";
    type=0;
   }
-}  
-
- for (i = 0; i < iMax; i++) {
   obstacles[i] = new Obs(typeobs,obsSize,obsX,obsY);
  }
     while(cycle){
