@@ -7,6 +7,7 @@ function preload(){
 function setup() {
  createCanvas(windowWidth, windowHeight);
  ellipseMode(CENTER);
+ rectMode(CENTER)
  level=0
  timer=16*60;
  bSize = 50;
@@ -38,7 +39,7 @@ if(newGame===true){
  textSize(25);
  text("score:" + score, 20, 30);
  text("Time:" + floor(timer/60), windowWidth/2-30, 30);
-  text("NEXT LVL: 20 Points", windowWidth/2+70, 30);
+  text("NEXT LVL: 20 Points", 20, 60);
  frict = 0.01;
  accelX = floor(rotationY) * frict;
  accelY = floor(rotationX) * frict;
@@ -68,6 +69,10 @@ if (timer<=0){
   if(score>=20){
     level+=1
     newGame=true
+  }else{
+   accelX=0;
+   accelY=0;
+   gameOver;
   }
 }
 //////////////////////////////////////////////////////////
@@ -154,4 +159,12 @@ if(this.type==="obs"){
   fill(this.colour)
   ellipse(this.x, this.y, this.size, this.size);
  }
+}
+///////////////////////////////////////////
+function gameOver(){
+  fill(255);
+   rect(windowWidth/2,windowHeight/2,55,55);
+   fill(0);
+   rect(windowWidth/2,windowHeight/2,50,50);
+   text("GAME OVER",windowWidth/2,windowHeight/2);
 }
