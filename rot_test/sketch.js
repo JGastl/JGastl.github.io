@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 var bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score, obstacles = [],
  img, type = 0,
  typeobs, obsSize, obsX, obsY,distmin=20;
 
 function preload() {
  img = loadImage("back.jpg");
+=======
+var i, newGame,bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score,obstacles = [],img, type=0, typeobs, obsSize,obsX,obsY, timer,level,iMax;
+//////////////////////////////////////////////
+function preload(){
+ img=loadImage("back.jpg");
+>>>>>>> origin/master
 }
-
+////////////////////////////////////////////////////////////////
 function setup() {
  createCanvas(windowWidth, windowHeight);
  ellipseMode(CENTER);
+<<<<<<< HEAD
  for (var i = 0; i < 3; i++) {
   if (type === 0) {
    typeobs = "obs";
@@ -37,6 +45,11 @@ function setup() {
   }
   obstacles[i] = new Obs(typeobs, obsSize, obsX, obsY);
  }
+=======
+ rectMode(CENTER)
+ level=0
+ timer=16*60;
+>>>>>>> origin/master
  bSize = 50;
  score = 0;
  posX = windowWidth / 2;
@@ -45,8 +58,9 @@ function setup() {
  vitesseX = 0;
  vitesseY = 0;
 }
-
+//////////////////////////////////////////
 function draw() {
+<<<<<<< HEAD
  background(img, 100);
  drawBall();
  fill(255);
@@ -54,7 +68,28 @@ function draw() {
  text("score:" + score, windowWidth / 2, windowHeight / 2);
  for (i = 0; i < 3; i++) {
   obstacles[i].drawObs();
+=======
+   if(level===0){
+   level=1;
+   newGame=true;
  }
+if(newGame===true){
+  obstac();
+  newGame=false;
+}
+ background(img,100);
+ newGame=false;
+ timer-=1;
+ drawBall();
+ for(i = 0; i < iMax; i++){
+ obstacles[i].drawObs();
+>>>>>>> origin/master
+ }
+ fill(255);
+ textSize(25);
+ text("score:" + score, 20, 30);
+ text("Time:" + floor(timer/60), windowWidth/2-30, 30);
+  text("NEXT LVL: 20 Points", 20, 60);
  frict = 0.01;
  accelX = floor(rotationY) * frict;
  accelY = floor(rotationX) * frict;
@@ -79,9 +114,70 @@ function draw() {
   vitesseY = -vitesseY * bounce;
   posY = bSize / 2;
  }
+<<<<<<< HEAD
  for (i = 0; i < 3; i++) {
   if (dist(posX, posY, obstacles[i].x, obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2) {
    if (obstacles[i].type === "obs") {
+=======
+}
+if (timer<=0){
+  if(score>=20){
+    level+=1
+    newGame=true
+  }else{
+   accelX=0;
+   accelY=0;
+   gameOver;
+  }
+}
+//////////////////////////////////////////////////////////
+function drawBall() {
+ fill(0, 255, 255);
+ ellipse(posX, posY, bSize, bSize);
+}
+////////////////////////////////////////////////////////
+function obstac(){
+  obsSize=random(30,60);
+  var cycle=true;
+if(level==1){
+  iMax=3
+}
+else if(level==2){
+  iMax=4
+}
+else if(level==3){
+  iMax=5
+}
+ for (i = 0; i < iMax; i++) {  
+   if(type===0){
+   typeobs="malus";
+   type++;
+  }
+  else if(type===1){
+   typeobs="obs";
+   type++;
+  }
+  else{
+   typeobs="bonus";
+   type=0;
+  }
+  obstacles[i] = new Obs(typeobs,obsSize,obsX,obsY);
+ }
+    while(cycle){
+  obsX=random(10,windowWidth);
+  obsY=random(10, windowHeight);
+  cycle=false
+  for(var j=0;j<i;j++){
+   if(dist(obsX,obsY,obstacles[j].obsX,obstacles[j].obsY<=obsSize/2+obstacles[j].size/2)){
+    cycle=true;
+    break;
+   }
+  }
+ }
+ for (i = 0; i < iMax; i++) {
+    if (dist(posX, posY, obstacles[i].x,obstacles[i].y) <= bSize / 2 + obstacles[i].size / 2){
+    if(obstacles[i].type==="obs"){
+>>>>>>> origin/master
     vitesseX = -vitesseX * bounce;
     vitesseY = -vitesseY * bounce;
    } else if (obstacles[i].type === "bonus") {
@@ -100,6 +196,7 @@ function draw() {
   }
  }
 }
+<<<<<<< HEAD
 
 function drawBall() {
  fill(0, 255, 255);
@@ -107,6 +204,10 @@ function drawBall() {
 }
 
 function Obs(obstacle, size, x, y) {
+=======
+/////////////////////////////////////////////////
+function Obs(obstacle) {
+>>>>>>> origin/master
  this.type = obstacle;
  this.x = x;
  this.y = y;
@@ -123,4 +224,16 @@ function Obs(obstacle, size, x, y) {
   fill(this.colour)
   ellipse(this.x, this.y, this.size, this.size);
  }
+<<<<<<< HEAD
 }
+=======
+}
+///////////////////////////////////////////
+function gameOver(){
+  fill(255);
+   rect(windowWidth/2,windowHeight/2,55,55);
+   fill(0);
+   rect(windowWidth/2,windowHeight/2,50,50);
+   text("GAME OVER",windowWidth/2,windowHeight/2);
+}
+>>>>>>> origin/master
