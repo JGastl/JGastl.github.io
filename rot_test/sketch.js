@@ -37,7 +37,8 @@ if(newGame===true){
  fill(255);
  textSize(25);
  text("score:" + score, 20, 30);
- text("Time:" + floor(timer/60), windowWidth/2, 30);
+ text("Time:" + floor(timer/60), windowWidth/2-30, 30);
+  text("NEXT LVL: 20 Points", windowWidth/2+70, 30);
  frict = 0.01;
  accelX = floor(rotationY) * frict;
  accelY = floor(rotationX) * frict;
@@ -62,6 +63,12 @@ if(newGame===true){
   vitesseY = -vitesseY * bounce;
   posY = bSize / 2;
  }
+}
+if (timer<=0){
+  if(score>=20){
+    level+=1
+    newGame=true
+  }
 }
 //////////////////////////////////////////////////////////
 function drawBall() {
