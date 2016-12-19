@@ -44,7 +44,7 @@ function draw() {
   if (timer <= 0) {
     if (score >= scoreLevels[level]) {
       level += 1;
-      newGame = false;
+      newGame = true;
       score = 0;
       timerLevels[level]
     } else {
