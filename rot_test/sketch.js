@@ -10,7 +10,8 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   ellipseMode(CENTER);
-  rectMode(CENTER)
+  rectMode(RADIUS);
+  textAlign(CENTER);
   level = 1;
   newGame=true;
   timer = timerLevels[level]
@@ -37,9 +38,8 @@ function draw() {
   }
   fill(255);
   textSize(25);
-  text("score:" + score, 20, 30);
+  text("score:" + score, 50, 30);
   text("Time:" + floor(timer / 60), windowWidth / 2 - 30, 30);
-  text("NEXT LVL: 20 Points", 20, 60);
 
   if (timer <= 0) {
     if (score >= scoreLevels[level]) {
@@ -165,9 +165,10 @@ function Obs(obstacle) {
 }
 ///////////////////////////////////////////
 function gameOver() {
-  fill(255);
-  rect(windowWidth / 2, windowHeight / 2, 55, 55);
   fill(0);
-  rect(windowWidth / 2, windowHeight / 2, 50, 50);
+  rect(windowWidth / 2, windowHeight / 2, 155, 55);
+  fill(255);
+   rect(windowWidth / 2, windowHeight / 2, 150, 50);
+   fill(0);
   text("GAME OVER", windowWidth / 2, windowHeight / 2);
 }
