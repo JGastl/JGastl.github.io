@@ -1,5 +1,5 @@
 var i, newGame, bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score, obstacles = [],
-  img, type = 0,img2,img3,img4,img5,
+  img, type = 0,img2,img3,img4,img5,game
   typeobs, obsSize, obsX, obsY, timer, level, iMax, scoreLevels =  [0,20, 40, 60,80,100,110],
   timerLevels = [ 0,16 * 60, 26 * 60, 36 * 60,46*60,56*60,66*60];
 //////////////////////////////////////////////
@@ -17,6 +17,7 @@ function setup() {
   rectMode(RADIUS);
   textAlign(CENTER);
   level = 1;
+  game=true
   newGame=true;
   timer = timerLevels[level]
   bSize = 50;
@@ -35,8 +36,11 @@ function draw() {
   }
   background(img, 100);
   testCol();
-  
+ if(game===true){
   drawBall();
+ }else{
+  gameOver();
+ }
   for (i = 0; i < iMax; i++) {
     obstacles[i].drawObs();
   }
@@ -52,7 +56,7 @@ function draw() {
       score = 0;
       timer=timerLevels[level]
     } else {
-      gameOver();
+      game=false;
     }
   }else{
     timer--;
