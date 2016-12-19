@@ -67,9 +67,9 @@ if(newGame===true){
 }
 if (timer<=0){
   if(score>=20){
-    level+=1
-    newGame=true
-    score=0
+    level+=1;
+    newGame=true;
+    score=0;
     timer=16*60;
   }else{
    accelX=0;
