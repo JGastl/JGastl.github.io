@@ -1,7 +1,7 @@
 var i, newGame, bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score, obstacles = [],
   img, type = 0,img2,img3,img4,img5,
-  typeobs, obsSize, obsX, obsY, timer, level, iMax, scoreLevels =  [0,20, 40, 60],
-  timerLevels = [ 0,16 * 60, 26 * 60, 36 * 60];
+  typeobs, obsSize, obsX, obsY, timer, level, iMax, scoreLevels =  [0,20, 40, 60,80,100,110],
+  timerLevels = [ 0,16 * 60, 26 * 60, 36 * 60,46*60,56*60,66*60];
 //////////////////////////////////////////////
 function preload() {
   img = loadImage("back.jpg");
