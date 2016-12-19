@@ -1,10 +1,14 @@
 var i, newGame, bSize, vitesseX, vitesseY, accelX, accelY, posX, posY, angX, angY, frict, bounce, score, obstacles = [],
-  img, type = 0,
+  img, type = 0,img2,img3,img4,img5,
   typeobs, obsSize, obsX, obsY, timer, level, iMax, scoreLevels =  [0,20, 40, 60],
   timerLevels = [ 0,16 * 60, 26 * 60, 36 * 60];
 //////////////////////////////////////////////
 function preload() {
   img = loadImage("back.jpg");
+  img2=loadImage("player.png");
+  img3=loadImage("bonus.png");
+  img4=loadImage("malus.png");
+  img5=loadImage("obs.png");
 }
 ///////////////////////////////////////////////////////////////
 function setup() {
@@ -56,8 +60,7 @@ function draw() {
   //////////////////////////////////////////////////////////
   function drawBall() {
     if (timer >= 0) {
-      fill(0, 255, 255);
-      ellipse(posX, posY, bSize, bSize);
+      image(img2,posX, posY, bSize, bSize);
       frict = 0.01;
       accelX = floor(rotationY) * frict;
       accelY = floor(rotationX) * frict;
@@ -95,6 +98,12 @@ function obstac() {
     iMax = 4
   } else if (level == 3) {
     iMax = 5
+  }else if (level == 4) {
+    iMax = 6
+  }else if (level == 5) {
+    iMax = 7
+  }else if (level == 6) {
+    iMax = 8
   }
   for (i = 0; i < iMax; i++) {
     if (type === 0) {
@@ -154,7 +163,7 @@ function Obs(obstacle) {
   if (this.type === "obs") {
     this.colour = color(0, 0, 255);
   } else if (this.type === "bonus") {
-    this.colour = color(0, 255, 0);
+    this.colour = color(0,255,0);
   } else {
     this.colour = color(255, 0, 0);
   }
