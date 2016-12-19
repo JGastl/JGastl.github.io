@@ -30,7 +30,7 @@ function draw() {
   }
   background(img, 100);
   testCol();
-  timer -= 1;
+  
   drawBall();
   for (i = 0; i < iMax; i++) {
     obstacles[i].drawObs();
@@ -50,6 +50,8 @@ function draw() {
     } else {
       gameOver();
     }
+  }else{
+    timer--;
   }
   //////////////////////////////////////////////////////////
   function drawBall() {
