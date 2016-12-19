@@ -180,4 +180,6 @@ function gameOver() {
    rect(windowWidth / 2, windowHeight / 2, 150, 50);
    fill(0);
   text("GAME OVER", windowWidth / 2, windowHeight / 2);
+  accelX=0;
+  accelY=0;
 }
