@@ -46,7 +46,7 @@ function draw() {
       level += 1;
       newGame = true;
       score = 0;
-      timerLevels[level]
+      timer=timerLevels[level]
     } else {
       gameOver();
     }
